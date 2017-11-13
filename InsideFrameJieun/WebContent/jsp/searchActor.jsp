@@ -32,6 +32,7 @@
     		
 			form.submit();
 		
+		
 	}
     </script>
     <!-- jQuery library -->
@@ -152,15 +153,18 @@
 	<div class="profilelist">
 		<div class="profile-row">
 		<%
+			try{
+				
+			
 			Iterator<MemberDTO> it = mList.iterator();
 			while(it.hasNext()){//-----while start-----
 				MemberDTO mdto = it.next();
 				String email = mdto.getEmail();
 				String name = mdto.getName();
-				String birth = "2017년 11월 6일";
+				String birth = mdto.getBirth();
 		%>		
 				<div class="profiles">
-					<a href="searchActorDetail.do?email=<%=email%>">
+					<a href="searchActorDetail.do?email=<%=email%>" onclick="window.open(this.href,'프로필','width=680, height=400, resizeable=no, scrollbars=no, toolbar=no, menubar=no, directories=no, status=no, location=no');return false;" target="_blank">
 						<div id="blackbox"></div>
                     	<img id="profileimg" src="../photo/actor.jpeg">
 						<p>
@@ -172,7 +176,9 @@
 				</div>
 		<%
 			}//-----while end -----
-		
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		%>
 		</div>
 	</div>

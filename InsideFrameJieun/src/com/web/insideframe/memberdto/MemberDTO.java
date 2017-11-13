@@ -6,7 +6,7 @@ public class MemberDTO {
 	   private String name;
 	   private String mType;
 	   private int admin;
-	   private String image;
+	   private String mimage;
 	   private String birth;
 	   private int height;
 	   private int weight;
@@ -22,7 +22,7 @@ public class MemberDTO {
 		this.name = name;
 		this.mType = mType;
 		this.admin = admin;
-		this.image = image;
+		this.mimage = image;
 		this.birth = birth;
 		this.height = height;
 		this.weight = weight;
@@ -43,10 +43,10 @@ public class MemberDTO {
 		this.mType = mType;
 	}
 	public String getImage() {
-		return image;
+		return mimage;
 	}
 	public void setImage(String image) {
-		this.image = image;
+		this.mimage = image;
 	}
 	public String getBirth() {
 		return birth;

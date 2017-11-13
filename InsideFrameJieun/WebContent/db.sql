@@ -2,11 +2,11 @@
 CREATE TABLE member (
 	email varchar(45) not null primary key,
 	pw varchar(45) not null,
-	name varchar(50) not null,
+	name varchar(20) not null,
 	mtype varchar(15) not null,
 	admin int default 0,
-	image varchar(100),
-	birth varchar(15),
+	mimage varchar(100),
+	birth varchar(20),
 	height int,
 	weight int,
 	phone varchar(20),
@@ -19,7 +19,8 @@ CREATE TABLE career (
 	type varchar(15),
 	title varchar(45),
 	roll varchar(15),
-	date varchar(15)
+	cdate varchar(15),
+	movieno int
 );
 
 
@@ -32,16 +33,17 @@ CREATE TABLE board (
 	bcount int
 );
 
-CREATE TABLE movieinfo(
-	movieno int primary key,
+CREATE TABLE movie(
+	movieno int auto_increment primary key,
 	mtitle varchar(45),
-	mimage varchar(100),
+	movieimage varchar(100),
 	director varchar(45),
-	link varchar(100),
-	category varchar(45),
+	youtubelink varchar(100),
+	category varchar(20),
 	mdate varchar(15),
 	likeno int,
-	count int
+	mcount int,
+	movieinfo text
 );
 
 CREATE TABLE categoryno(
@@ -50,6 +52,31 @@ CREATE TABLE categoryno(
 	seq int
 );
 
+
+CREATE TABLE board(
+	idx int auto_increment primary key,
+	writer varchar(20) not null,
+	btitle varchar(100) not null,
+	bdate varchar(20) not null,
+	btype varchar(20) not null,
+	content text,
+	bcount int
+); 
+
+CREATE TABLE board_comment(
+	commentno int auto_increment primary key,
+	comment_board int,
+	commentid varchar(45),
+	commentdate varchar(15),
+	commentcontent text
+); 
+CREATE TABLE movieno_comment(
+	mcommentno int auto_increment primary key,
+	comment_movieno int,
+	mcommentid varchar(45),
+	mcommentdate varchar(15),
+	mcommentcontent text
+); 
 --------------테이블 삭제----------------
 drop table member;
 drop table profile;
