@@ -6,9 +6,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.web.insideframe.memberdto.MemberDTO;
-import com.web.insideframe.memberservice.SearchActorConditionService;
-import com.web.insideframe.memberservice.SearchAllActorService;
+import com.web.insideframe.dto.MemberDTO;
+import com.web.insideframe.service.SearchActorConditionService;
+import com.web.insideframe.service.SearchAllActorService;
 
 public class SearchActorCommand implements Command {
 

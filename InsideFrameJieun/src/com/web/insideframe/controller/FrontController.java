@@ -40,7 +40,9 @@ public class FrontController extends HttpServlet {
 		String comName=uri.substring(conPath.length());
 		
 		if(comName.equals("/jsp/join.do")){
-			viewPage="join.jsp";
+			command=new JoinCommand();
+			command.execute(request, response);
+			viewPage="joinOk.jsp";
 		}else if(comName.equals("/jsp/searchActor.do")){
 			//배우 검색
 			command = new SearchActorCommand();
@@ -61,6 +63,58 @@ public class FrontController extends HttpServlet {
 			command = new SearchDirectorDetailCommand();
 			command.execute(request, response);
 			viewPage="searchDirectorDetail.jsp";
+		}else if(comName.equals("/jsp/joinPage.do")){
+			viewPage="join.jsp";
+		}else if(comName.equals("/jsp/loginPage.do")){
+			viewPage="login.jsp";
+		}else if(comName.equals("/jsp/index.do")){
+			viewPage="index.jsp";
+		}else if(comName.equals("/jsp/login.do")){
+			command=new LoginCommand();
+			command.execute(request, response);
+			viewPage="index.jsp";
+		}else if(comName.equals("/jsp/logout.do")){
+			command=new LogoutCommand();
+			command.execute(request, response);
+			viewPage="index.jsp";
+		}else if(comName.equals("/jsp/profilePage.do")){
+			command=new ProfileCommand();
+			command.execute(request, response);
+			viewPage="profile.jsp";
+		}else if(comName.equals("/jsp/profilealter.do")){
+			command=new ProfileAlterCommand();
+			command.execute(request, response);
+			viewPage="index.jsp";
+		}else if(comName.equals("/jsp/boardlist.do")){
+			command=new BoardListCommand();
+			command.execute(request, response);
+			viewPage="boardList.jsp";
+		}else if(comName.equals("/jsp/boardDetailView.do")){
+			command=new BoardDetailViewCommand();
+			command.execute(request, response);
+			viewPage="boardDetailView.jsp";
+		}else if(comName.equals("/jsp/reply.do")){
+			command=new ReplyCommand();
+			command.execute(request, response);
+			viewPage="boardDetailView.do?idx="+request.getParameter("comment_board")+"&commentPage=1";
+		}else if(comName.equals("/jsp/cinemaSearchPage.do")){
+			command=new CinemaSearchCommand();
+			command.execute(request, response);
+			viewPage="cinemaSearch.jsp?";
+		}else if(comName.equals("/jsp/cinemaSearch.do")){
+			command=new CinemaSearchCommand();
+			command.execute(request, response);
+			viewPage="cinemaSearch.jsp";
+		}else if(comName.equals("/jsp/movieDetailView.do")){
+			command=new MovieDetailViewCommand();
+			command.execute(request, response);
+			viewPage="movieDetailView.jsp";
+		}else if(comName.equals("/jsp/movieReply.do")){
+			command=new MovieReplyCommand();
+			command.execute(request, response);
+			viewPage="movieDetailView.do?movieno="+request.getParameter("movieno")+"&commentPage=1";
+		}else if(comName.equals("/jsp/changePasswordPage.do")){
+			viewPage="changePassword.jsp";
 		}
 		
 		

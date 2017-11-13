@@ -1,21 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <title>INSIDEFRAME STUDIO</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
+    <script type="text/javascript" >
         $(document).ready(function() {
             $("#nav-bar").click(function() {
                 $("#menu").fadeToggle();
@@ -23,22 +17,35 @@
         });
     </script>
 
+    <!-- jQuery library -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <title>INSIDEFRAME STUDIO</title>
+	
 </head>
+
+
 
 <body>
    <header id="header">
         <nav>
             <div id="nav-logo">
-                <a href="#">
+                <a href="index.do">
                     <h1>INSIDEFRAME</h1>
                 </a>
             </div>
-            
             <div id="nav-bar">
-                    <i class="fa fa-bars"></i>
+                <i class="fa fa-bars"></i>
             </div>
         </nav>
     </header>
@@ -53,13 +60,28 @@
                 <a class="mlist" href="searchActor.do">ACTOR</a>
             </li>
             <li class="look">
+                <a class="mlist" href="cinemaSearchPage.do?category=all">CINEMA</a>
+            </li>
+            <li class="look">
+              	<a class="mlist" href="boardlist.do?page=1">BOARD</a>
+            </li>
+            <li class="look">
                 <a class="mlist" href="#">NOTICE</a>
             </li>
-
-            <li class="login">
-                <a class="mlist2" href="#">LOGIN</a>
-                <a class="mlist2" href="#">JOIN</a>
-            </li>
+            <c:choose>
+                <c:when test="${sessionScope.member!=null }">
+                     <li class="login" >
+                      	<a class="mlist2" href="profilePage.do">MYPAGE</a>
+                        <a class="mlist2" href="logout.do">LOGOUT</a>
+                     </li>
+                </c:when>
+                <c:otherwise>                            
+                     <li class="login">
+                      	<a class="mlist2" href="loginPage.do">LOGIN</a>
+                        <a class="mlist2" href="joinPage.do">JOIN</a>
+                     </li>
+                </c:otherwise>
+            </c:choose>
         </nav>
     </menu>
 
@@ -81,6 +103,7 @@
                         <p>Thank you, I love HODOO!</p>
                     </div>
                 </div>
+
                 <div class="item">
                     <img class="d-block w-100" src="../photo/carousel_1.jpg" alt="second slide">
                     <div class="carousel-caption">
@@ -137,10 +160,13 @@
             </div>
             <div class="search-area">
                 <div class="search">
+
                 </div>
                 <div class="search">
+
                 </div>
                 <div class="search">
+
                 </div>
             </div>
         </div>
@@ -167,5 +193,16 @@
         </div>
     </div>
 
+    <!--
+<script type="text/javascript" src="js/smooth-scroll.js"></script>
+<script type="text/javascript">
+    smoothScroll.init();
+
+    function movedownClick() {
+        var d = document.querySelector('#header');
+        d.style.height = '8%';
+    }
+</script>-->
 </body>
+
 </html>

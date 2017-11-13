@@ -43,7 +43,7 @@ CREATE TABLE movie(
 	mdate varchar(15),
 	likeno int,
 	mcount int,
-	movieinfo text
+	movieinfo TEXT
 );
 
 CREATE TABLE categoryno(
@@ -52,31 +52,38 @@ CREATE TABLE categoryno(
 	seq int
 );
 
+alter table member change image mimage varchar(100);
 
+drop table board;
+drop table movie;
+drop table board_comment;
+drop table movieno_comment;
+commit;
 CREATE TABLE board(
 	idx int auto_increment primary key,
 	writer varchar(20) not null,
 	btitle varchar(100) not null,
 	bdate varchar(20) not null,
 	btype varchar(20) not null,
-	content text,
+	content TEXT,
 	bcount int
 ); 
-
+select * from board;
 CREATE TABLE board_comment(
 	commentno int auto_increment primary key,
 	comment_board int,
 	commentid varchar(45),
 	commentdate varchar(15),
-	commentcontent text
+	commentcontent TEXT
 ); 
 CREATE TABLE movieno_comment(
 	mcommentno int auto_increment primary key,
 	comment_movieno int,
 	mcommentid varchar(45),
 	mcommentdate varchar(15),
-	mcommentcontent text
+	mcommentcontent TEXT
 ); 
+commit;
 --------------테이블 삭제----------------
 drop table member;
 drop table profile;
@@ -85,6 +92,7 @@ drop table movieinfo;
 
 --------------테이블 조회----------------
 SELECT * FROM member;
+
 
 select * from member where mtype = '배우' and sex='남';
 
@@ -153,7 +161,32 @@ insert into career(email,type,title,roll,date) values('ykhd1@nate.com', '연극', 
 insert into career(email,type,title,roll,date) values('ykhd1@nate.com', 'CF', 'SK브로드밴드', '남고생역','20141019');
 insert into career(email,type,title,roll,date) values('ykhd1@nate.com', 'CF', '비타500', '대학생역','20110106');
 
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('섹스앤더시티','ysung1223@nate.com','comedy','20170802',0,0);
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('여성이와아이들','ysung1223@nate.com','comedy','20170802',0,0);
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('괴물','ysung1223@nate.com','actionAndThriller','20170802',0,0);
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('밀정','ysung1223@nate.com','romance','20170802',0,0);
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('변호인','ysung1223@nate.com','drama','20170802',0,0);
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('택시기사','ysung1223@nate.com','drama','20170802',0,0);
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('아이언맨','ysung1223@nate.com','actionAndThriller','20170802',0,0);
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('토르','ysung1223@nate.com','actionAndThriller','20170802',0,0);
+insert into movie(mtitle,director,category,mdate,likeno,mcount) values('삼육대학교','ysung1223@nate.com','horror','20170802',0,0);
 
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
+insert into board(writer, btitle, bdate, btype, content,bcount) values('윤여성','테스트게시판','2017.11.06','배우구함','테스트게시판',0);
 
 select * from career;
 

@@ -1,6 +1,6 @@
-<%@page import="com.web.insideframe.memberdto.CareerDTO"%>
+<%@page import="com.web.insideframe.dto.CareerDTO"%>
 <%@page import="java.util.Iterator"%>
-<%@page import="com.web.insideframe.memberdto.MemberDTO"%>
+<%@page import="com.web.insideframe.dto.MemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -61,10 +61,10 @@
                 <a class="mlist" href="searchActor.do">ACTOR</a>
             </li>
             <li class="look">
-                <a class="mlist" href="#">CINEMA</a>
+                <a class="mlist" href="cinemaSearchPage.do?category=all">CINEMA</a>
             </li>
             <li class="look">
-                <a class="mlist" href="borde.html">BOARD</a>
+                <a class="mlist" href="boardlist.do?page=1">BOARD</a>
             </li>
             <li class="look">
                 <a class="mlist" href="#">NOTICE</a>

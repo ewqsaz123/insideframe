@@ -1,7 +1,7 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="java.util.Iterator"%>
-<%@page import="com.web.insideframe.memberdto.CareerDTO"%>
-<%@page import="com.web.insideframe.memberdto.MemberDTO"%>
+<%@page import="com.web.insideframe.dto.CareerDTO"%>
+<%@page import="com.web.insideframe.dto.MemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

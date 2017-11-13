@@ -1,8 +1,6 @@
 package com.web.insideframe.common;
 
-import com.web.insideframe.memberdao.CareerDAO;
-import com.web.insideframe.memberdao.MemberDAO;
-import com.web.insideframe.memberdao.ProfileDAO;;
+import com.web.insideframe.dao.*;
 
 public class DaoFactory {
 	public DBConnection connection(){
@@ -22,10 +20,29 @@ public class DaoFactory {
 		return cdao;
 	}
 	
-	public ProfileDAO profileDao(){
-		ProfileDAO pdao = new ProfileDAO();
-		pdao.setConnection(connection());
-		
-		return pdao;
+	public BoardDAO boardDao(){
+		BoardDAO bdao=new BoardDAO();
+		bdao.setConnection(connection());
+		return bdao;
+	}
+	public ReplyDAO replyDao(){
+		ReplyDAO rdao=new ReplyDAO();
+		rdao.setConnection(connection());
+		return rdao;
+	}
+	public MovieDAO movieDao(){
+		MovieDAO mdao=new MovieDAO();
+		mdao.setConnection(connection());
+		return mdao;
+	}
+	public MovieDetailDAO movieDetailDao(){
+		MovieDetailDAO mddao=new MovieDetailDAO();
+		mddao.setConnection(connection());
+		return mddao;
+	}
+	public MovieReplyDAO movieReplyDao(){
+		MovieReplyDAO mrdao=new MovieReplyDAO();
+		mrdao.setConnection(connection());
+		return mrdao;
 	}
 }

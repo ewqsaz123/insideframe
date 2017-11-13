@@ -6,10 +6,8 @@ import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
 import com.web.insideframe.common.DaoFactory;
-import com.web.insideframe.memberdao.MemberDAO;
-import com.web.insideframe.memberdao.ProfileDAO;
-import com.web.insideframe.memberdto.MemberDTO;
-import com.web.insideframe.memberdto.ProfileDTO;
+import com.web.insideframe.dao.MemberDAO;
+import com.web.insideframe.dto.MemberDTO;
 
 public class TestMain {
 	@Test
@@ -28,17 +26,6 @@ public class TestMain {
 	     
 	    mdao.deleteAll();
 	}
-	@Test
-	public void testProfileDB(){
-		DaoFactory df = new DaoFactory();
-		ProfileDTO pdto = new ProfileDTO();
-		ProfileDAO pdao = df.profileDao();
-		
-		pdao.insert("ysung1223@nate.com");
-		
-	}
-	
-	
-	
+
 	
 }
